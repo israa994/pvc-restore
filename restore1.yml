@@ -1,0 +1,16 @@
+apiVersion: velero.io/v1
+kind: Restore
+metadata:
+  name: ClusterRestore
+  namespace: velero
+spec:
+  backupName: backup20210628
+#namespaces to be included in the restore are put here, to exclude namespaces, 
+#they are put under "excludedNamespaces"
+  includedNamespaces:
+  - '*'
+#resources to be included in the restore are put here, to exclude resources, 
+#they are put under "excludedResources"
+  includedResources:
+  - '*'
+  includeClusterResources: null
